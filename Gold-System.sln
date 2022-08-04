@@ -5,11 +5,16 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gold", "Gold\Gold.csproj", "{25B27C69-4B9D-43F5-8735-FEE4875CB67E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gold.DAL", "Gold.DAL\Gold.DAL.csproj", "{6DAC5D19-4EEC-4EAD-90C9-9BC168E8743A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gold.DAL", "Gold.DAL\Gold.DAL.csproj", "{6DAC5D19-4EEC-4EAD-90C9-9BC168E8743A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gold.Common", "Gold.Common\Gold.Common.csproj", "{BC963EEA-10E1-456A-A0EF-9129F3D11AB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gold.Common", "Gold.Common\Gold.Common.csproj", "{BC963EEA-10E1-456A-A0EF-9129F3D11AB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gold.Logic", "Gold.Logic\Gold.Logic.csproj", "{38E27FB0-599F-4C44-AC69-9D56BBB5926A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gold.Logic", "Gold.Logic\Gold.Logic.csproj", "{38E27FB0-599F-4C44-AC69-9D56BBB5926A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C4F52A1C-9A6C-40D1-8399-C5034066C915}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

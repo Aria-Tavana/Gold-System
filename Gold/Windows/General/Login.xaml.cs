@@ -14,14 +14,22 @@ using System.Windows.Shapes;
 
 namespace Gold.Windows.General
 {
-    /// <summary>
-    /// Interaction logic for Login.xaml
-    /// </summary>
     public partial class Login : Window
     {
         public Login()
         {
             InitializeComponent();
+        }
+
+        private void winLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void winLogin_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ChangedButton == MouseButton.Left)
+                DragMove();
         }
     }
 }
