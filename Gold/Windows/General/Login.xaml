@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:Gold.Windows.General"
         mc:Ignorable="d"
-        Title="" Height="500" Width="330" Background="#E0FBFC" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" FontFamily="Vazir" FontSize="16" FlowDirection="RightToLeft" KeyDown="winLogin_KeyDown" MouseDown="winLogin_MouseDown">
+        Title="" Height="535" Width="345" Background="#E0FBFC" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="None" FontFamily="Vazir" FontSize="16" FlowDirection="RightToLeft" KeyDown="winLogin_KeyDown" MouseDown="winLogin_MouseDown">
     <Grid>
         <Border Height="180" Grid.Row="0" VerticalAlignment="Top">
             <Border.Background>
@@ -16,7 +16,7 @@
                 </LinearGradientBrush>
             </Border.Background>
         </Border>
-        <Border Opacity="0.2" CornerRadius="20" Height="120" Width="120" Background="White" Margin="-86,19,291,381" RenderTransformOrigin="0.5,0.5">
+        <Border Opacity="0.2" CornerRadius="20" Height="120" Width="120" Background="White" Margin="-82,0,302,400" RenderTransformOrigin="0.5,0.5">
             <Border.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -26,7 +26,7 @@
                 </TransformGroup>
             </Border.RenderTransform>
         </Border>
-        <Border Opacity="0.2" CornerRadius="20" Height="170" Width="170" Background="White" Margin="-92,-6,247,356" RenderTransformOrigin="0.5,0.5">
+        <Border Opacity="0.2" CornerRadius="20" Height="170" Width="170" Background="White" Margin="-72,-25,242,375" RenderTransformOrigin="0.5,0.5">
             <Border.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -36,7 +36,7 @@
                 </TransformGroup>
             </Border.RenderTransform>
         </Border>
-        <Border Opacity="0.2" CornerRadius="20" Height="200" Width="200" Background="White" Margin="-74,-27,199,347" RenderTransformOrigin="0.5,0.5">
+        <Border Opacity="0.2" CornerRadius="20" Height="200" Width="200" Background="White" Margin="-66,-40,206,360" RenderTransformOrigin="0.5,0.5">
             <Border.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -46,15 +46,15 @@
                 </TransformGroup>
             </Border.RenderTransform>
         </Border>
-        <Button x:Name="btnClose" Grid.Row="0" Width="35" Height="35" Style="{DynamicResource MaterialDesignIconForegroundButton}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="5">
+        <Button x:Name="btnClose" Grid.Row="0" Width="35" Height="35" Style="{DynamicResource MaterialDesignIconForegroundButton}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="5" Click="btnClose_Click">
             <materialDesign:PackIcon Kind="Close" Foreground="#293241" Width="35" Height="35"/>
         </Button>
-        <Border Background="White" CornerRadius="30,30,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="350" Width="330">
+        <Border Background="White" CornerRadius="30,30,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="440" Width="345">
             <StackPanel>
-                <Image Stretch="Uniform" StretchDirection="Both" Width="120" Height="120" HorizontalAlignment="Center" Margin="0,10,0,0" Source="/Windows/General/Logo_Without_Text.ico" />
-                <TextBox x:Name="txtUsername" Style="{DynamicResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="نام کاربری" Margin="20,30,20,0" BorderBrush="#293241"/>
-                <TextBox x:Name="txtPassword" Style="{DynamicResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="رمز عبور" Margin="20,20,20,0" BorderBrush="#293241"/>
-                <Button x:Name="btnLogin" Content="ورود" Foreground="#EE6C4D" Background="#293241" BorderBrush="Transparent" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="96" Margin="0,20,0,0"/>
+                <Image Stretch="Uniform" StretchDirection="Both" Width="210" Height="210" HorizontalAlignment="Center" Margin="0,10,0,0" Source="/Windows/General/Logo.ico"/>
+                <TextBox x:Name="txtUsername" Style="{DynamicResource MaterialDesignFloatingHintTextBox}" materialDesign:HintAssist.Hint="نام کاربری" Margin="30,30,30,0" BorderBrush="#293241" MaxLength="50"/>
+                <PasswordBox x:Name="txtPassword" Style="{DynamicResource MaterialDesignFloatingHintPasswordBox}" materialDesign:HintAssist.Hint="رمز عبور" Margin="30,20,30,0" BorderBrush="#293241" MaxLength="50"/>
+                <Button x:Name="btnLogin" Content="ورود" Foreground="#EE6C4D" Background="#293241" BorderBrush="Transparent" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="96" Margin="0,20,0,0" Click="btnLogin_Click"/>
             </StackPanel>
         </Border>
     </Grid>
