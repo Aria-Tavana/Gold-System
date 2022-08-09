@@ -1,32 +1,39 @@
-﻿using Gold.Logic;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Input;
+using Gold.Logic;
+using MaterialDesignThemes.Wpf;
 
 namespace Gold.Windows.General
 {
     public partial class Login : Window
     {
+        public bool IsDarkTheme { get; set; }
+        private readonly PaletteHelper paletteHelper = new();
         public Login()
         {
             InitializeComponent();
             //SetupUser();
         }
 
-        private void winLogin_KeyDown(object sender, KeyEventArgs e)
+        private void tbtnTheme_Click(object sender, RoutedEventArgs e)
         {
-            if (e.Key == Key.Enter)
-                LoginUser();
+            ITheme theme = paletteHelper.GetTheme();
+            if (IsDarkTheme = theme.GetBaseTheme() == BaseTheme.Dark)
+            {
+                IsDarkTheme = false;
+                theme.SetBaseTheme(Theme.Light);
+            }
+            else
+            {
+                IsDarkTheme = true;
+                theme.SetBaseTheme(Theme.Dark);
+            }
+            paletteHelper.SetTheme(theme);
         }
 
-        private void winLogin_MouseDown(object sender, MouseButtonEventArgs e)
+        private void btnExit_Click(object sender, RoutedEventArgs e)
         {
-            if (e.ChangedButton == MouseButton.Left)
-                DragMove();
-        }
-
-        private void btnClose_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
+            Application.Current.Shutdown();
         }
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
@@ -34,20 +41,37 @@ namespace Gold.Windows.General
             LoginUser();
         }
 
-        private bool LoginUser()
+        protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
         {
-            if (Authenticator.Instance.CheckUser(txtUsername.Text, txtPassword.Password) == true)
-            {
-                new User.User_Main().Show();
-                Close();
-                return true;
-            }
-            else
-                MessageBox.Show("!اطلاعات نامعتبر است", "", MessageBoxButton.OK, MessageBoxImage.Error);
-            return false;
+            base.OnMouseLeftButtonDown(e);
+            DragMove();
         }
 
-        private void SetupUser()
+        protected override void OnKeyDown(KeyEventArgs e)
+        {
+            base.OnKeyDown(e);
+            if (e.Key == Key.Enter)
+                LoginUser();
+        }
+
+        private void LoginUser()
+        {
+            string username = txtUsername.Text;
+            string password = txtPassword.Password;
+
+            if (!string.IsNullOrWhiteSpace(username) && !string.IsNullOrWhiteSpace(password))
+            {
+                if (Authenticator.Instance.CheckUser(username, password))
+                {
+                    new User.User_Main().Show();
+                    Close();
+                }
+                else
+                    MessageBox.Show("!اطلاعات نامعتبر است", "", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        protected void SetupUser()
         {
             Common.Models.User newUser = new()
             {

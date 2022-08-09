@@ -8,7 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Windows\General\Logo.ico" />
     <None Remove="Windows\General\Logo.svg" />
   </ItemGroup>
 
@@ -24,10 +23,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Gold.Common\Gold.Common.csproj" />
     <ProjectReference Include="..\Gold.Logic\Gold.Logic.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Windows\General\Logo.ico" />
   </ItemGroup>
 
 </Project>
