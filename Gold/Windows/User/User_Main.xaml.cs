@@ -14,14 +14,17 @@ using System.Windows.Shapes;
 
 namespace Gold.Windows.User
 {
-    /// <summary>
-    /// Interaction logic for User_Main.xaml
-    /// </summary>
     public partial class User_Main : Window
     {
         public User_Main()
         {
             InitializeComponent();
+        }
+
+        protected override void OnMouseLeftButtonDown(MouseButtonEventArgs e)
+        {
+            base.OnMouseLeftButtonDown(e);
+            DragMove();
         }
     }
 }

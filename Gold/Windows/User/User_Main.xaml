@@ -3,10 +3,45 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:Gold.Windows.User"
         mc:Ignorable="d"
-        Title="User_Main" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="" Height="440" Width="720" ResizeMode="CanResize" FlowDirection="RightToLeft"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}" FontFamily="Vazir"
+        Background="{x:Null}" AllowsTransparency="True"
+        WindowStyle="None" WindowStartupLocation="CenterScreen">
+    <materialDesign:Card UniformCornerRadius="15" Background="#E0FBFC" Margin="0" materialDesign:ShadowAssist.ShadowDepth="Depth0">
+        <materialDesign:DialogHost x:Name="DialogHost" CloseOnClickAway="True">
+            <StackPanel>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="53"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="0" VerticalAlignment="Top" Height="45" CornerRadius="15,15,0,0" BorderThickness="0,0,0,2" BorderBrush="#293241">
+                        <Grid>
+                            <Border Background="#EE6C4D" BorderThickness="3" BorderBrush="#98C1D9" CornerRadius="100" Margin="0,0,15,0" Height="40" Width="40" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                <materialDesign:PackIcon Foreground="#293241" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="25" Kind="ShoppingCart"/>
+                            </Border>
+                            <materialDesign:PopupBox Margin="15,0,0,0" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Height="25" VerticalAlignment="Center" HorizontalAlignment="Left">
+                                <StackPanel>
+                                    <StackPanel Margin="16,10,0,6" Orientation="Horizontal" HorizontalAlignment="Center">
+                                        <TextBlock Text="حالت تمام صفحه" VerticalAlignment="Center"/>
+                                        <ToggleButton x:Name="tbtnFullScreen" Cursor="Hand" ToolTip="فعالسازی حالت تاریک" Margin="12,0,8,0" IsChecked="{Binding IsFullScreen}"/>
+                                    </StackPanel>
+                                    <Button x:Name="btnClose" Content="خروج"/>
+                                </StackPanel>
+                            </materialDesign:PopupBox>
+                        </Grid>
+                    </Border>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </Grid>
+            </StackPanel>
+        </materialDesign:DialogHost>
+    </materialDesign:Card>
 </Window>
