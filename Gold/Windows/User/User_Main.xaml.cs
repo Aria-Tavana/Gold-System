@@ -16,6 +16,7 @@ namespace Gold.Windows.User
 {
     public partial class User_Main : Window
     {
+        public bool IsFullScreen { get; set; }
         public User_Main()
         {
             InitializeComponent();
@@ -25,6 +26,25 @@ namespace Gold.Windows.User
         {
             base.OnMouseLeftButtonDown(e);
             DragMove();
+        }
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void tbtnFullScreen_Click(object sender, RoutedEventArgs e)
+        {
+            if (IsFullScreen == false)
+            {
+                WindowState = WindowState.Maximized;
+                IsFullScreen = true;
+            }
+            else
+            {
+                WindowState = WindowState.Normal;
+                IsFullScreen = false;
+            }
         }
     }
 }

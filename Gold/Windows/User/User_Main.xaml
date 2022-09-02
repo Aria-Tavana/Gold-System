@@ -15,21 +15,21 @@
             <StackPanel>
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="53"/>
+                        <RowDefinition Height="55"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <Border Grid.Row="0" VerticalAlignment="Top" Height="45" CornerRadius="15,15,0,0" BorderThickness="0,0,0,2" BorderBrush="#293241">
+                    <Border Grid.Row="0" VerticalAlignment="Top" Height="55" CornerRadius="15,15,0,0" BorderThickness="0,0,0,2" BorderBrush="#293241">
                         <Grid>
-                            <Border Background="#EE6C4D" BorderThickness="3" BorderBrush="#98C1D9" CornerRadius="100" Margin="0,0,15,0" Height="40" Width="40" HorizontalAlignment="Right" VerticalAlignment="Center">
+                            <Border Background="#EE6C4D" BorderThickness="3" BorderBrush="#98C1D9" CornerRadius="100" Margin="0,5,15,0" Height="40" Width="40" HorizontalAlignment="Right" VerticalAlignment="Center">
                                 <materialDesign:PackIcon Foreground="#293241" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="25" Kind="ShoppingCart"/>
                             </Border>
                             <materialDesign:PopupBox Margin="15,0,0,0" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Height="25" VerticalAlignment="Center" HorizontalAlignment="Left">
                                 <StackPanel>
                                     <StackPanel Margin="16,10,0,6" Orientation="Horizontal" HorizontalAlignment="Center">
                                         <TextBlock Text="حالت تمام صفحه" VerticalAlignment="Center"/>
-                                        <ToggleButton x:Name="tbtnFullScreen" Cursor="Hand" ToolTip="فعالسازی حالت تاریک" Margin="12,0,8,0" IsChecked="{Binding IsFullScreen}"/>
+                                        <ToggleButton x:Name="tbtnFullScreen" Cursor="Hand" ToolTip="فعالسازی حالت تاریک" Margin="12,0,8,0" IsChecked="{Binding IsFullScreen}" Click="tbtnFullScreen_Click"/>
                                     </StackPanel>
-                                    <Button x:Name="btnClose" Content="خروج"/>
+                                    <Button x:Name="btnExit" Content="خروج" Click="btnExit_Click"/>
                                 </StackPanel>
                             </materialDesign:PopupBox>
                         </Grid>
